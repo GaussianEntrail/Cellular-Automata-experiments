@@ -315,7 +315,7 @@
 		
 		let step_counter = 0;
 		
-		const do_step = () => { 
+		const do_step = (DO_SECOND_RULE = false) => { 
 			// Try doing two different rules with different neighborhoods
 			step_counter++;
 			
@@ -323,7 +323,10 @@
 				lifeGrid.doRule(); 
 			}
 			else {
-				//lifeGrid.doRule(0, Taxicab, VONNEUMANN2, [1], [4]);
+				if (DO_SECOND_RULE) {
+					//enable this second rule for some fun
+					lifeGrid.doRule(0, Taxicab, VONNEUMANN, [3,4], [1,2,3,4]);
+				}
 			}
 		}
 		
