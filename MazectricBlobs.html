@@ -96,19 +96,11 @@
 			DYING : 3
 		}
 		
-		const selectColor = (current_state) => {
+		const Pallete = ['black', 'orangered', 'red', 'maroon'];
+		
+		const selectColor = (i) => {
 			let c = 'black';
-			switch (current_state) {
-				default:
-				case CellStates.DEAD:
-					c = 'black'; break;
-				case CellStates.ALIVE:
-					c = 'orangered'; break;
-				case CellStates.OLD:
-					c = 'red'; break;
-				case CellStates.DYING:
-					c = 'maroon'; break;
-			}
+			if (i >= 0 && i < Pallete.length) {return Pallete[i];}
 			return c;
 		}
 		
